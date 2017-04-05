@@ -2,7 +2,7 @@
     <div class="panel panel-body">
         {{ task.name }}
         {{ task.duration }} seconds
-        <button id="start" (click)="startTimer()">Start Timer</button>
-        <button id="stop" (click)="stopTimer()">Finish</button>
+        <button id="{{ 'start' + task.id }}" (click)="startTimer()">Start Timer</button>
+        <button id="{{ 'stop' + task.id }}" (click)="stopTimer()">Finish</button>
     </div>
 </div>

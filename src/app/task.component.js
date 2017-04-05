@@ -24,22 +24,22 @@ var TaskComponent = (function () {
             this.subscription = this.timer.subscribe(function (t) { return _this.task.duration += 1; });
             this.hasStarted = true;
             // Update the button description
-            var startBtn = document.getElementById('start');
+            var startBtn = document.getElementById('start' + this.task.id);
             startBtn.innerHTML = 'Pause';
         }
         else {
             this.subscription.unsubscribe();
             this.hasStarted = false;
             // Update the button description
-            var startBtn = document.getElementById('start');
+            var startBtn = document.getElementById('start' + this.task.id);
             startBtn.innerHTML = 'Restart';
         }
     };
     TaskComponent.prototype.stopTimer = function () {
         this.subscription.unsubscribe();
         // Remove the buttons
-        var startBtn = document.getElementById('start');
-        var stopBtn = document.getElementById('stop');
+        var startBtn = document.getElementById('start' + this.task.id);
+        var stopBtn = document.getElementById('stop' + this.task.id);
         startBtn.parentNode.removeChild(startBtn);
         stopBtn.parentNode.removeChild(stopBtn);
     };

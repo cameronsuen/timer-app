@@ -22,14 +22,14 @@ export class TaskComponent {
             this.hasStarted = true;
 
             // Update the button description
-            let startBtn = document.getElementById('start');
+            let startBtn = document.getElementById('start' + this.task.id);
             startBtn.innerHTML = 'Pause';
         } else {
             this.subscription.unsubscribe();
             this.hasStarted = false;
 
             // Update the button description
-            let startBtn = document.getElementById('start');
+            let startBtn = document.getElementById('start' + this.task.id);
             startBtn.innerHTML = 'Restart';
         }
     }
@@ -38,8 +38,8 @@ export class TaskComponent {
         this.subscription.unsubscribe(); 
 
         // Remove the buttons
-        let startBtn = document.getElementById('start');
-        let stopBtn = document.getElementById('stop');
+        let startBtn = document.getElementById('start' + this.task.id);
+        let stopBtn = document.getElementById('stop' + this.task.id);
         startBtn.parentNode.removeChild(startBtn);
         stopBtn.parentNode.removeChild(stopBtn);
     }
