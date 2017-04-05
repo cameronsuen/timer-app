@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var angular2_moment_1 = require("angular2-moment");
 var app_component_1 = require("./app.component");
 var task_component_1 = require("./task.component");
 var AppModule = (function () {
@@ -16,7 +17,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
+        imports: [platform_browser_1.BrowserModule, angular2_moment_1.MomentModule],
         declarations: [app_component_1.AppComponent, task_component_1.TaskComponent],
         bootstrap: [app_component_1.AppComponent]
     })
