@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="md-col-8 md-col-offset-2">
+            <input #task_input type="text" name="in_task">
+            <button (click)="addTask(task_input.value)">Add Task</button>
+        </div>
+    </div>
+    <task *ngFor="let task of tasks" [task]="task">
